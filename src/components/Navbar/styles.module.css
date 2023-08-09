@@ -1,0 +1,9 @@
+/** estilo para el navbar */
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-items: center;
+    gap: 50px;
+}
+

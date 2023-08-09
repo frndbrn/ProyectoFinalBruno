@@ -1,0 +1,7 @@
+/** estilo para mi CartWidget */
+.carrito{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}

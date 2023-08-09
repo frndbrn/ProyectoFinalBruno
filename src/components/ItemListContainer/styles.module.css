@@ -1,0 +1,6 @@
+/** le aplico estilo al saludo recibido como prop */
+.saludo{
+    font-size: xx-large;
+    color: rgb(243, 152, 136);
+    font-weight: lighter;
+}

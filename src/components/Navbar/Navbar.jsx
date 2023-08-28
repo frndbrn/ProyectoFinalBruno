@@ -1,22 +1,20 @@
-// acá importo el CartWidget ya que va a estar dentro del Navbar
 import CartWidget from "../CartWidget/CartWidget"
 import styles from "./styles.module.css"
+import { Link } from "react-router-dom"
+//import ItemListContainer from "../ItemListContainer/ItemListContainer"
 
-const Navbar = () => {
-
-    // basicamente es el nombre del negocio y los botones donde estarán los filtros de categoría
+export default function Navbar () {
     return (
         <div className={styles['menu']}>
-            <h1>Coder Records</h1>
-            <button className="btn btn-primary">Rock</button>
-            <button className="btn btn-primary">Jazz</button>
-            <button className="btn btn-primary">Electrónica</button>
-            <button className="btn btn-primary">Pop</button>
-
+            <Link to='/'>Coder Records</Link>
+            <div className={styles['categorias']}>
+            <Link to='/categoria/rock' className={styles['boton']}>Rock</Link>
+            <Link to='/categoria/electronica'className={styles['boton']}>Electronica</Link>
+            <Link to='/categoria/jazz'className={styles['boton']}>Jazz</Link>
+            <Link to='/categoria/pop'className={styles['boton']}>Pop</Link>
+            </div>
             <CartWidget />
         </div>
-    )
-        // y debajo de esos botones incluyo el CartWidget
-}
+    )}
 
-export default Navbar // exporto el componente
+

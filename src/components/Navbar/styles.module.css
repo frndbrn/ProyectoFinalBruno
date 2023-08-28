@@ -1,9 +1,36 @@
 /** estilo para el navbar */
 .menu{
+    position: fixed;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    justify-items: center;
-    gap: 50px;
+    justify-content: space-around;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #a88b6a; /* Color de fondo del Navbar */
+    color: #fff; /* Color del texto en el Navbar */
+    padding: 10px; /* Espaciado interior del Navbar */
+    z-index: 100; /* Capa superior para asegurar que esté arriba de otros elementos */
 }
 
+.categorias{
+    display: flex;
+    gap: 15px;
+    text-decoration: none;
+    border: none;
+}
+
+.boton{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton:hover{
+    background-color: #fad0c9;
+}

@@ -1,19 +1,33 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-
 import styles from './styles.module.css'
+import Navbar from '../Navbar/Navbar'
 export default function ItemListContainer () {
 
     const [items, setItems] = useState([])
-    const getProductos = async () => {
+    const {id} = useParams()
+
+    const filtrarProductos = (productos) => {
+        const productosFiltrados = productos.filter(producto => producto.categoria == id)
+        productosFiltrados.length > 0 ? subirProductos(productosFiltrados) : subirProductos(productos)
+
+    }
+
+    const conseguirProductos = async () => {
         const respuesta = await fetch('/data/productos.json')
         const productos = await respuesta.json()
+        filtrarProductos(productos)
+    }
+
+    const subirProductos = (productos) => {
+        console.log(productos)
         setItems(productos)
     }
 
+
     useEffect(() => {
-        getProductos()
-    }, [])
+        conseguirProductos()
+    }, [id])
 
     return(
         <div className={styles['principal']}>

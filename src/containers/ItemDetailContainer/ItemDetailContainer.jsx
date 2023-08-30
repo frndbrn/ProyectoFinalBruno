@@ -1,28 +1,26 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import ItemDetail from "../ItemDetail/ItemDetail";
+import ItemDetail from "../../components/ItemDetail/ItemDetail";
 
 
 export default function ItemDetailContainer () {
     const [detalle, setDetalle] = useState({})
     const { id } = useParams()
-
+    useEffect(() => {
     const getProductos = async () => {
         const respuesta = await fetch('/data/productos.json')
         const productos = await respuesta.json()
 
-        const productosFiltrados = productos.find(producto => producto.categoria == id)
+        const productosFiltrados = productos.find(producto => producto.id == id)
 
-        productosFiltrados > 0 && setDetalle(productosFiltrados)
-
-
+        setDetalle(productosFiltrados)
     }
 
-    useEffect(() => {
-        console.log(id)
+    getProductos()
+    console.log(id)
     }, [id])
 
     return (
-        <ItemDetail />
+        <ItemDetail detalles={detalle}/>
     )
 }

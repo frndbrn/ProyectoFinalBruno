@@ -1,0 +1,30 @@
+.detalles{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 10px; 
+    flex-direction: column;
+    margin-top: 90px;
+}
+
+.detalles img{
+    max-width: 50%;
+    height: auto;
+}
+
+
+.boton{
+    background-color: #e85a4f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-decoration: none;
+}
+
+.boton:hover{
+    background-color: #c74339;
+}

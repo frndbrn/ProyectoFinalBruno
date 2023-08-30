@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import styles from './styles.module.css'
-import Navbar from '../Navbar/Navbar'
+import { Link } from 'react-router-dom'
 export default function ItemListContainer () {
 
     const [items, setItems] = useState([])
@@ -36,8 +36,8 @@ export default function ItemListContainer () {
                 <img src={item.rutaImagen} alt="" className={styles['foto']}/>
                 <h2>{item.nombre}</h2>
                 <p>{item.artista}</p>
-                <p>{item.precio}</p>
-                <button className={styles['boton']}>Ver mas</button>
+                <p>${item.precio}</p>
+                <Link to={`/item/${item.id}`} className={styles['boton']}>Detalles</Link>
             </div>            
                 
                 

@@ -3,24 +3,31 @@ import { useState, useEffect } from "react";
 import ItemDetail from "../../components/ItemDetail/ItemDetail";
 
 
-export default function ItemDetailContainer () {
+export default function ItemDetailContainer() {
     const [detalle, setDetalle] = useState({})
+    const [cargando, setCargando] = useState(true);
     const { id } = useParams()
     useEffect(() => {
-    const getProductos = async () => {
-        const respuesta = await fetch('/data/productos.json')
-        const productos = await respuesta.json()
+        const getProductos = async () => {
+            try {
+                const respuesta = await fetch('/data/productos.json')
+                const productos = await respuesta.json()
+                const productosFiltrados = productos.find(producto => producto.id == id)
+                setDetalle(productosFiltrados)
+                setCargando(false)
+            } catch (error) {
+                console.error('Error al cargar los detalles', error)
+            }
+            
 
-        const productosFiltrados = productos.find(producto => producto.id == id)
-
-        setDetalle(productosFiltrados)
     }
 
-    getProductos()
-    console.log(id)
+        getProductos()
     }, [id])
 
     return (
-        <ItemDetail detalles={detalle}/>
+        <div>
+            { cargando ? (<p>Cargando detalles...</p> ) : (<ItemDetail detalles={detalle} />)}
+        </div>
     )
 }

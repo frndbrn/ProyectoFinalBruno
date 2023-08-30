@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import styles from './styles.module.css'
 
-const CartWidget = () => {
+export default function CartWidget () {
 
     return(
         <div className={styles['carrito']}>
@@ -15,4 +15,3 @@ const CartWidget = () => {
 }
 
 
-export default CartWidget // exporto el componente

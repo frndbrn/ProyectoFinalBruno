@@ -1,4 +1,4 @@
-/** estilo para el navbar */
+
 .menu{
     position: fixed;
     display: flex;
@@ -6,10 +6,11 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #a88b6a; /* Color de fondo del Navbar */
-    color: #fff; /* Color del texto en el Navbar */
-    padding: 10px; /* Espaciado interior del Navbar */
-    z-index: 100; /* Capa superior para asegurar que esté arriba de otros elementos */
+    background: rgb(251,246,246);
+    background: linear-gradient(180deg, rgba(251,246,246,1) 0%, rgba(242,174,122,1) 76%);
+    color: #fff; 
+    padding: 10px; 
+    z-index: 100; 
 }
 
 .categorias{
@@ -33,4 +34,12 @@
 
 .boton:hover{
     background-color: #fad0c9;
+}
+
+.logo{
+    font-family: 'Helvetica Neue', sans-serif;
+    text-decoration: none;
+    color: black;
+    line-height: 1.9;
+
 }

@@ -11,6 +11,7 @@ export default function Navbar () {
             <Link to='/categoria/electronica'className={styles['boton']}>Electronica</Link>
             <Link to='/categoria/jazz'className={styles['boton']}>Jazz</Link>
             <Link to='/categoria/pop'className={styles['boton']}>Pop</Link>
+            <Link to='/carrito' className={styles['boton']}>Ver carrito</Link>
             </div>
             <CartWidget />
         </div>

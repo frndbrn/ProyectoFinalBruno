@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import styles from './styles.module.css'
-import { Link } from 'react-router-dom'
+import { collection, doc, getDocs } from 'firebase/firestore'
+import { db } from '../../firebase/client'
+import Item from '../../components/Item/Item'
 export default function ItemListContainer() {
+
 
     const [items, setItems] = useState([])
     const [cargando, setCargando] = useState(true);
@@ -22,9 +25,12 @@ export default function ItemListContainer() {
 
         const conseguirProductos = async () => {
             try {
-                const respuesta = await fetch('/data/productos.json')
-                const productos = await respuesta.json()
-                filtrarProductos(productos)
+
+                const productosRef = collection(db, "productos")
+                const data = await getDocs(productosRef)
+                const dataFiltrada = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+                console.log(dataFiltrada)
+                filtrarProductos(dataFiltrada)
                 setCargando(false)
             } catch (error) {
                 console.error('Error al cargar los productos', error)
@@ -40,15 +46,9 @@ export default function ItemListContainer() {
 
                     (<div className={styles['principal']}>
                         {items.map(item =>
-                            <div key={item.id} className={styles['container']}>
-                                <img src={item.rutaImagen} alt="portada del disco" className={styles['foto']} />
-                                <h2>{item.nombre}</h2>
-                                <p>{item.artista}</p>
-                                <p>${item.precio}</p>
-                                <Link to={`/item/${item.id}`} className={styles['boton']}>Detalles</Link>
+                            <div  key={item.id} >
+                                <Item id={item.id} rutaImagen={item.rutaImagen} nombre={item.nombre} artista={item.artista} precio={item.precio} />
                             </div>
-
-
                         )}
                     </div>)
 

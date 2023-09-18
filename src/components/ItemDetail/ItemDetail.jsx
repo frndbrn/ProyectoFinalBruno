@@ -1,17 +1,9 @@
 import { Link } from "react-router-dom"
 import styles from './styles.module.css'
 import { useState } from "react"
+import ItemCount from "../ItemCount/ItemCount"
 
 export default function ItemDetail ({detalles}) {
-
-    const [valorContador, setValorContador] = useState(0)
-
-    const sumar = () => {
-        valorContador < detalles.stock && setValorContador(valorContador + 1)
-      }
-      const restar = () => {
-        valorContador > 0 && setValorContador(valorContador - 1)
-      }
 
     return(
         <div className={styles['detalles']}>
@@ -24,12 +16,9 @@ export default function ItemDetail ({detalles}) {
             <h3>Categoría: {detalles.categoria}</h3>
             <p>Precio: ${detalles.precio}</p>
             <p>Unidades: {detalles.stock}</p>
-            <div>
-                <p>Cantidad a agregar: {valorContador}</p>
-                <button onClick={sumar}>+</button>
-                <button onClick={restar}>-</button>
-
-            </div>
+            <ItemCount  stock={detalles.stock}/>
         </div>
     )
 }
+
+

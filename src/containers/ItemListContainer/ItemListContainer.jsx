@@ -47,7 +47,7 @@ export default function ItemListContainer() {
                     (<div className={styles['principal']}>
                         {items.map(item =>
                             <div  key={item.id} >
-                                <Item id={item.id} rutaImagen={item.rutaImagen} nombre={item.nombre} artista={item.artista} precio={item.precio} />
+                                <Item id={item.id} rutaImagen={item.rutaImagen} nombre={item.nombre} artista={item.artista} precio={item.precio} stock={item.stock}/>
                             </div>
                         )}
                     </div>)

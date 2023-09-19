@@ -1,0 +1,14 @@
+/* estilos para el carrito */
+
+
+
+.imagenCarrito {
+  height: 50px;
+  width: 80px;
+}
+
+#carrito h2 {
+  margin: 10px;
+  text-align: center;
+  text-decoration: solid;
+}

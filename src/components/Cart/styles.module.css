@@ -1,0 +1,36 @@
+#carrito,
+.descripcion {
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "foto nombre unidades subtotal boton";
+}
+
+
+.foto {
+    grid-area: foto;
+  }
+  
+  .nombre {
+    grid-area: nombre;
+  }
+  
+  .unidades {
+    grid-area: unidades;
+  }
+  
+  .subtotal {
+    grid-area: subtotal;
+  }
+  
+  .boton {
+    grid-area: boton;
+  }
+  
+  .oculto {
+    display: none !important;
+  }
+  

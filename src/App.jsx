@@ -1,6 +1,6 @@
 // Código creado por Fernando Bruno - Comisión 55735
-import './App.css';
-import Router from './router/Router';
+import './App.css'
+import Router from './router/Router'
 
 function App() {
 
@@ -10,7 +10,7 @@ function App() {
         <Router />
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

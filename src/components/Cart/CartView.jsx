@@ -12,13 +12,17 @@ export default function CartView() {
       {cartItems.length === 0 ? (
         <p>Tu carrito está vacío.</p>
       ) : (
-        <ul>
+        <div className={styles['carrito']}>
           {cartItems.map((item) => (
-            <div key={item.id} className={styles['carrito']}>
-                <CartItem id={item.id} rutaImagen={item.rutaImagen} nombre={item.nombre} artista={item.artista} precio={item.precio} unidades={item.unidades}/>
+            <div key={item.id} >
+              <CartItem id={item.id} rutaImagen={item.rutaImagen} nombre={item.nombre} precio={item.precio} unidades={item.unidades} />
             </div>
           ))}
-        </ul>
+          <div>
+            <button>Finalizar Compra</button>
+          </div>
+        </div>
+
       )}
     </div>
   )

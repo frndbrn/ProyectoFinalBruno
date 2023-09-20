@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import styles from './styles.module.css'
-import { collection, doc, getDocs } from 'firebase/firestore'
+import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../../firebase/client'
 import Item from '../../components/Item/Item'
 export default function ItemListContainer() {
 
 
     const [items, setItems] = useState([])
-    const [cargando, setCargando] = useState(true);
+    const [cargando, setCargando] = useState(true)
     const { id } = useParams()
 
     useEffect(() => {

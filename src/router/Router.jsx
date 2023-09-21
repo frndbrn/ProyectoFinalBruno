@@ -8,6 +8,7 @@ import ItemListContainer from '../containers/ItemListContainer/ItemListContainer
 import ItemDetailContainer from '../containers/ItemDetailContainer/ItemDetailContainer'
 import CartView from '../components/Cart/CartView'
 import { CartProvider } from '../components/CartProvider/CartProvider'
+import CheckoutPage from '../components/Checkout/Checkout'
 
 
 export default function Router () {
@@ -20,6 +21,7 @@ export default function Router () {
             <Route path='/categoria/:id' element={<ItemListContainer />}></Route>
             <Route path='/item/:id' element={<ItemDetailContainer />}></Route>
             <Route path='/cart' element={<CartView/>}></Route>
+            <Route path='/checkout' element={<CheckoutPage/>}></Route>
         </Routes>
         </CartProvider>
         </BrowserRouter>

@@ -42,7 +42,15 @@ export default function ItemListContainer() {
     return (
         <div>
             {
-                cargando ? (<p>Cargando productos...</p>) :
+                cargando ? 
+                
+                (<div className="d-flex justify-content-center">
+                <div className="spinner-border" role="status">
+                  <span className="sr-only">Cargando...</span>
+                </div>
+              </div>) 
+                
+                :
 
                     (<div className={styles['principal']}>
                         {items.map(item =>

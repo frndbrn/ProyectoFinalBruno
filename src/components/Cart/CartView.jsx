@@ -2,6 +2,8 @@ import React from 'react'
 import { useCart } from '../CartProvider/CartProvider'
 import CartItem from '../CartItem/CartItem'
 import styles from './styles.module.css'
+import { Link } from 'react-router-dom'
+import CheckoutPage from '../Checkout/Checkout'
 
 export default function CartView() {
   const { cartItems } = useCart()
@@ -19,7 +21,9 @@ export default function CartView() {
             </div>
           ))}
           <div>
-            <button>Finalizar Compra</button>
+            <Link to="/checkout">
+              <button>Ir a la Finalización de Compra</button>
+            </Link>
           </div>
         </div>
 

@@ -1,4 +1,4 @@
-
+/* 
 .menu{
     position: fixed;
     display: flex;
@@ -15,31 +15,29 @@
 
 .categorias{
     display: flex;
-    gap: 15px;
+    gap: 10px;
     text-decoration: none;
     border: none;
 }
 
-.boton{
-    display: inline-block;
+
+
+.boton {
+    text-decoration: none;
     padding: 10px 20px;
-    background-color: #ffffff;
-    color: black;
-    border: none;
-    border-radius: 4px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+    margin-right: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
 
-.boton:hover{
-    background-color: #fad0c9;
-}
+  .boton.resaltado {
+    background-color: #333;
+    color: #fff;
+  } */
 
 .logo{
-    font-family: 'Helvetica Neue', sans-serif;
-    text-decoration: none;
-    color: black;
-    line-height: 1.9;
-
+    max-width: 210px; 
 }

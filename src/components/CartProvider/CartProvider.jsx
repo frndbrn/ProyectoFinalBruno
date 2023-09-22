@@ -40,8 +40,26 @@ export function CartProvider({ children }) {
     setCartItems(actualizarCarrito)
   }
 
+  const actualizarUnidades = (producto) => {
+    console.log(producto.unidades)
+    console.log(producto.nuevo)
+
+      if (producto.nuevo <= producto.stock) {
+        setCartItems((itemAgregado) =>
+          itemAgregado.map((item) =>
+            item.id === producto.id
+              ? { ...item, unidades: producto.nuevo, subtotal: producto.nuevo * item.precio }     
+              : item
+          )
+        );
+      } else {
+        console.log("Te pasaste macho");
+      }
+    console.log()
+  };
+
   return (
-    <CartContext.Provider value={{ cartItems, agregarACarrito, eliminarDelCarrito, montoFinal }}>
+    <CartContext.Provider value={{ cartItems, agregarACarrito, eliminarDelCarrito, montoFinal, actualizarUnidades }}>
       {children}
     </CartContext.Provider>
   )

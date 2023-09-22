@@ -16,7 +16,7 @@ export default function CartView() {
         <div className={styles['carrito']}>
           {cartItems.map((item) => (
             <div key={item.id} >
-              <CartItem id={item.id} rutaImagen={item.rutaImagen} nombre={item.nombre} precio={item.precio} unidades={item.unidades} />
+              <CartItem id={item.id} rutaImagen={item.rutaImagen} nombre={item.nombre} precio={item.precio} unidades={item.unidades} subtotal={item.subtotal} stock={item.stock}/>
             </div>
           ))}
           <div>

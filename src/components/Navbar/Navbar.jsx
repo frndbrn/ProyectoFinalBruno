@@ -28,7 +28,6 @@ export default function Navbar() {
                         <Link to="/categoria/electronica" className={`nav-item nav-link ${location.pathname === "/categoria/electronica" ? "active" : ""}`}>Electronica</Link>
                         <Link to="/categoria/jazz" className={`nav-item nav-link ${location.pathname === "/categoria/jazz" ? "active" : ""}`}>Jazz</Link>
                         <Link to="/categoria/pop" className={`nav-item nav-link ${location.pathname === "/categoria/pop" ? "active" : ""}`}>Pop</Link>
-                        <Link to="/cart" className={`nav-item nav-link  ${location.pathname === "/cart" ? styles["resaltado"] : ""}`}>Ver carrito</Link>
                     </div>
                 </div>
                 <CartWidget />

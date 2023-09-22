@@ -16,7 +16,7 @@ export default function Item({id, rutaImagen, nombre, artista, precio, stock}) {
         artista,
         precio, 
         stock,
-        unidades:1
+        unidades:1,
       }
         agregarACarrito(producto)
     }

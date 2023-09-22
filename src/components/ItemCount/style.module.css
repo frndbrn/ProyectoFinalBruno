@@ -1,0 +1,47 @@
+/* styles.module.css */
+
+.product-counter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .counter-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+  
+  .aumentar,
+  .disminuir,
+  .agregar {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .aumentar:hover,
+  .disminuir:hover,
+  .agregar:hover {
+    background-color: #0056b3;
+  }
+  
+  .aumentar {
+    background-color: #28a745; /* Color verde */
+  }
+  
+  .disminuir {
+    background-color: #dc3545; /* Color rojo */
+  }
+  
+  .agregar {
+    background-color: #007bff; /* Color azul */
+  }
+  

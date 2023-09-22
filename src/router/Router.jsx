@@ -6,7 +6,7 @@ import {
 import Navbar from '../components/Navbar/Navbar'
 import ItemListContainer from '../containers/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from '../containers/ItemDetailContainer/ItemDetailContainer'
-import CartView from '../components/Cart/CartView'
+import CartView from '../components/CartView/CartView'
 import { CartProvider } from '../components/CartProvider/CartProvider'
 import CheckoutPage from '../components/Checkout/Checkout'
 

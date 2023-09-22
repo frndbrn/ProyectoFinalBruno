@@ -3,10 +3,9 @@ import { useCart } from '../CartProvider/CartProvider'
 import CartItem from '../CartItem/CartItem'
 import styles from './styles.module.css'
 import { Link } from 'react-router-dom'
-import CheckoutPage from '../Checkout/Checkout'
 
 export default function CartView() {
-  const { cartItems } = useCart()
+  const { cartItems, montoFinal } = useCart()
 
   return (
     <div>
@@ -21,8 +20,11 @@ export default function CartView() {
             </div>
           ))}
           <div>
+            <p className={styles['total']}>Total a pagar: ${montoFinal}</p>
+          </div>
+          <div>
             <Link to="/checkout">
-              <button>Ir a la Finalización de Compra</button>
+              <button className={styles['botonFinal']}>Ir a la Finalización de Compra</button>
             </Link>
           </div>
         </div>

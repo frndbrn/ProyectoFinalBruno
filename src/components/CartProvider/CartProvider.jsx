@@ -21,7 +21,7 @@ export function CartProvider({ children }) {
           setCartItems((itemAgregado) =>
         itemAgregado.map((item) =>
           item.id === producto.id
-            ? { ...item, unidades: item.unidades + 1 }
+            ? { ...item, unidades: item.unidades + 1, subtotal: (item.unidades + 1) * item.precio }
             : item
         )
       )
@@ -30,7 +30,7 @@ export function CartProvider({ children }) {
       }
       
     } else {
-        setCartItems([...cartItems, {...producto, unidades: parseInt(producto.unidades)}]) 
+        setCartItems([...cartItems, {...producto, unidades: parseInt(producto.unidades), subtotal: parseInt(producto.unidades) * producto.precio }]) 
     }
 
   }

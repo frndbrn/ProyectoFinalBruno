@@ -1,0 +1,40 @@
+
+.historial {
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 1rem;
+}
+
+.informacion {
+  margin: 0.5rem 0;
+  color: #666;
+  
+}
+
+.lista {
+    max-height: 300px; 
+  overflow-y: auto;
+  list-style-type: none;
+  padding: 0;
+  margin: 1rem 0;
+
+}
+
+.item {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #f9f9f9;
+}
+
+
+.total {
+  margin-top: 2rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.precio {
+  color: #333;
+  font-size: 1.2rem;
+}

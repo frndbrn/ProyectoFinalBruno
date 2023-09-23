@@ -1,15 +1,17 @@
 import { Link } from 'react-router-dom'
 import styles from './styles.module.css'
 import { useCart } from '../CartProvider/CartProvider'
+import { mostrarToastBueno } from '../Alerts/Alerts'
+import { useState } from 'react'
 
 
 
 export default function Item({id, rutaImagen, nombre, artista, precio, stock}) {
 
-    const { agregarACarrito } = useCart()
+    const { agregarACarrito, actualizarUnidades, cartItems } = useCart()
 
     const handleAddToCart = () => {
-      const producto = {
+        const producto = {
         id,
         rutaImagen,
         nombre,
@@ -20,6 +22,9 @@ export default function Item({id, rutaImagen, nombre, artista, precio, stock}) {
       }
         agregarACarrito(producto)
     }
+
+
+
     return (
         <div className={styles['container']}>
             <img src={rutaImagen} alt="portada del disco" className={styles['foto']} />

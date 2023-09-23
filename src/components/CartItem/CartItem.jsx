@@ -1,31 +1,33 @@
 import styles from './styles.module.css'
 import botones from '../ItemCount/style.module.css'
 import { useCart } from '../CartProvider/CartProvider'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import { mostrarToastInfo, mostrarToastMalo } from '../Alerts/Alerts'
 
 export default function CartItem({ id, rutaImagen, nombre, precio, unidades, subtotal, stock }) {
   const { eliminarDelCarrito, actualizarUnidades } = useCart()
-  const [cantidad, setCantidad] = useState(unidades);
+  const [cantidad, setCantidad] = useState(unidades)
 
 
   const actualizar = (nuevo) => {
     if (nuevo >= 1 && nuevo <= stock) {
-      setCantidad(nuevo);
+      setCantidad(nuevo)
       const producto = {
         id: id,
         unidades: unidades,
         stock: stock,
         nuevo: nuevo,
-      };
-      actualizarUnidades(producto);
+      }
+      actualizarUnidades(producto)
     } else {
-      console.log("Te pasaste macho");
+      mostrarToastMalo('No se puede agregar o quitar más unidades')
     }
-  };
+  }
 
 
   const eliminarProducto = () => {
     eliminarDelCarrito(id)
+    mostrarToastInfo('Producto eliminado del carrito!')
   }
 
 
@@ -46,13 +48,3 @@ export default function CartItem({ id, rutaImagen, nombre, precio, unidades, sub
 
   )
 }
-
-
-/**
- *         <button onClick={incrementarCantidad} className={botones['aumentar']}>+</button>{' '}
-        <button onClick={decrementarCantidad} className={botones['disminuir']}>-</button>
-        <button onClick={actualizar} className={botones['agregar']}>Actualizar</button>
- * 
- * 
- * 
- */

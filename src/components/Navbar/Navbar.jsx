@@ -30,6 +30,7 @@ export default function Navbar() {
                         <Link to="/categoria/pop" className={`nav-item nav-link ${location.pathname === "/categoria/pop" ? "active" : ""}`}>Pop</Link>
                     </div>
                 </div>
+                <Link to="/historial" className={`nav-item nav-link ${location.pathname === "/historial" ? "active" : ""}`}>Ver Historial</Link>
                 <CartWidget />
             </div>
         </nav>

@@ -1,4 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from 'react'
+import { mostrarToastInfo, mostrarToastBueno } from '../Alerts/Alerts'
 
 const CartContext = createContext()
 
@@ -15,22 +16,27 @@ export function CartProvider({ children }) {
   }, [cartItems])
 
   const agregarACarrito = (producto) => {
+    console.log(producto.id)
     const productoExistente = cartItems.find((item) => item.id === producto.id)
-    if (productoExistente){
-      if(productoExistente.unidades < producto.stock){
-          setCartItems((itemAgregado) =>
-        itemAgregado.map((item) =>
-          item.id === producto.id
-            ? { ...item, unidades: item.unidades + 1, subtotal: (item.unidades + 1) * item.precio }
-            : item
+    if (productoExistente) {
+      if (productoExistente.unidades < producto.stock) {
+        setCartItems((itemAgregado) =>
+          itemAgregado.map((item) =>
+            item.id === producto.id
+              ? { ...item, unidades: item.unidades + 1, subtotal: (item.unidades + 1) * item.precio }
+              : item
+          )
+
         )
-      )
+        mostrarToastBueno('Agregado al carrito!')
       } else {
-        console.log("Te pasaste macho")
+        mostrarToastInfo('No se puede agregar más unidades!')
       }
-      
+
     } else {
-        setCartItems([...cartItems, {...producto, unidades: parseInt(producto.unidades), subtotal: parseInt(producto.unidades) * producto.precio }]) 
+      setCartItems([...cartItems, { ...producto, unidades: parseInt(producto.unidades), subtotal: parseInt(producto.unidades) * producto.precio }])
+      mostrarToastBueno('Agregado al carrito!')
+
     }
 
   }
@@ -44,22 +50,22 @@ export function CartProvider({ children }) {
     console.log(producto.unidades)
     console.log(producto.nuevo)
 
-      if (producto.nuevo <= producto.stock) {
-        setCartItems((itemAgregado) =>
-          itemAgregado.map((item) =>
-            item.id === producto.id
-              ? { ...item, unidades: producto.nuevo, subtotal: producto.nuevo * item.precio }     
-              : item
-          )
-        );
-      } else {
-        console.log("Te pasaste macho");
-      }
+    if (producto.nuevo <= producto.stock) {
+      setCartItems((itemAgregado) =>
+        itemAgregado.map((item) =>
+          item.id === producto.id
+            ? { ...item, unidades: producto.nuevo, subtotal: producto.nuevo * item.precio }
+            : item
+        )
+      )
+    } else {
+      mostrarToastInfo('No se puede agregar más unidades!')
+    }
     console.log()
-  };
+  }
 
   return (
-    <CartContext.Provider value={{ cartItems, agregarACarrito, eliminarDelCarrito, montoFinal, actualizarUnidades }}>
+    <CartContext.Provider value={{ cartItems, agregarACarrito, eliminarDelCarrito, montoFinal, actualizarUnidades, totalCarrito }}>
       {children}
     </CartContext.Provider>
   )
@@ -67,4 +73,9 @@ export function CartProvider({ children }) {
 
 export function useCart() {
   return useContext(CartContext)
+}
+
+export const totalCarrito = (carrito) => {
+  console.log(carrito)
+  return carrito.reduce((total, item) => total + item.unidades, 0)
 }

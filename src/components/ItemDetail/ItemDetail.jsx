@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import styles from './styles.module.css'
 import ItemCount from "../ItemCount/ItemCount"
 
-export default function ItemDetail ({detalles}) {
+export default function ItemDetail ({detalles, id}) {
     
 
     return(
@@ -16,7 +16,7 @@ export default function ItemDetail ({detalles}) {
             <h3>Categoría: {detalles.categoria}</h3>
             <p>Precio: ${detalles.precio}</p>
             <p>Unidades: {detalles.stock}</p>
-            <ItemCount  detalles={detalles}/>
+            <ItemCount  detalles={detalles} id={id}/>
         </div>
     )
 }

@@ -1,8 +1,10 @@
 import { useState } from "react"
 import { useCart } from "../CartProvider/CartProvider"
 import styles from './style.module.css'
+import { mostrarToastBueno } from "../Alerts/Alerts"
 
-export default function ItemCount({ detalles }) {
+
+export default function ItemCount({ detalles, id }) {
 
     const [valorContador, setValorContador] = useState(1)
     const { agregarACarrito } = useCart()
@@ -11,13 +13,13 @@ export default function ItemCount({ detalles }) {
         valorContador < detalles.stock && setValorContador(valorContador + 1)
     }
     const restar = () => {
-        valorContador > 0 && setValorContador(valorContador - 1)
+        valorContador > 1 && setValorContador(valorContador - 1)
     }
 
 
     const handleAddToCart = () => {
         const producto = {
-            id: detalles.id,
+            id: id,
             rutaImagen: detalles.rutaImagen,
             nombre: detalles.nombre,
             artista: detalles.artista,

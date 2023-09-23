@@ -17,7 +17,6 @@ export default function ItemDetailContainer() {
                 if (snapshot.exists()) {
                     const productosFiltrados = { id: snapshot.id, ...snapshot.data() }
                     setDetalle(productosFiltrados)
-                    console.log(detalle)
                     setCargando(false)
                 } else {
                     console.log('Error al cargar los detalles')
@@ -39,7 +38,7 @@ export default function ItemDetailContainer() {
               <span className="sr-only">Loading...</span>
             </div>
           </div>) : 
-            (<ItemDetail detalles={detalle} />)}
+            (<ItemDetail detalles={detalle} id={id} />)}
         </div>
     )
 }

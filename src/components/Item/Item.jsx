@@ -1,39 +1,36 @@
 import { Link } from 'react-router-dom'
 import styles from './styles.module.css'
 import { useCart } from '../CartProvider/CartProvider'
-import { mostrarToastBueno } from '../Alerts/Alerts'
-import { useState } from 'react'
 
 
 
-export default function Item({id, rutaImagen, nombre, artista, precio, stock}) {
 
-    const { agregarACarrito, actualizarUnidades, cartItems } = useCart()
+export default function Item({ id, rutaImagen, nombre, artista, precio, stock }) {
 
-    const handleAddToCart = () => {
-        const producto = {
-        id,
-        rutaImagen,
-        nombre,
-        artista,
-        precio, 
-        stock,
-        unidades:1,
-      }
-        agregarACarrito(producto)
+  const { agregarACarrito } = useCart()
+
+  const handleAddToCart = () => {
+    const producto = {
+      id,
+      rutaImagen,
+      nombre,
+      artista,
+      precio,
+      stock,
+      unidades: 1,
     }
+    agregarACarrito(producto)
+  }
 
 
 
-    return (
-        <div className={styles['container']}>
-            <img src={rutaImagen} alt="portada del disco" className={styles['foto']} />
-            <h2>{nombre}</h2>
-            <p>{artista}</p>
-            <p>${precio}</p>
-            <p>Unidades: {stock}</p>
-            <Link to={`/item/${id}`} className={styles['boton']}>Detalles</Link>
-            <button className={styles['boton']} onClick={handleAddToCart}>Agregar a carrito</button>
-        </div>
-    )
+  return (
+    <div className={styles['container']}>
+      <img src={rutaImagen} alt="portada del disco" className={styles['foto']} />
+      <h2>{nombre}</h2>
+      <p>${precio}</p>
+      <Link to={`/item/${id}`} className={styles['boton']}>Detalles</Link>
+      <button className={styles['boton']} onClick={handleAddToCart}>Agregar a carrito</button>
+    </div>
+  )
 }

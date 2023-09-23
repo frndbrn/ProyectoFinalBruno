@@ -1,5 +1,4 @@
-
-.producto{
+.producto {
   display: flex;
   background-color: rgba(7, 7, 7, 0.144);
   align-items: center;
@@ -33,31 +32,31 @@
 
 
 .foto {
-    grid-area: foto;
-  }
-  
-  .nombre {
-    grid-area: nombre;
-  }
+  grid-area: foto;
+}
 
-  .precio{
-    grid-area: precio;
-  }
-  
-  .unidades {
-    grid-area: unidades;
-  }
-  
-  .subtotal {
-    grid-area: subtotal;
-  }
-  
-  .boton {
-    grid-area: boton;
-  }
-  
-  
-.boton{
+.nombre {
+  grid-area: nombre;
+}
+
+.precio {
+  grid-area: precio;
+}
+
+.unidades {
+  grid-area: unidades;
+}
+
+.subtotal {
+  grid-area: subtotal;
+}
+
+.boton {
+  grid-area: boton;
+}
+
+
+.boton {
   background-color: #e85a4f;
   color: white;
   border: none;
@@ -69,6 +68,6 @@
   text-decoration: none;
 }
 
-.boton:hover{
+.boton:hover {
   background-color: #c74339;
 }

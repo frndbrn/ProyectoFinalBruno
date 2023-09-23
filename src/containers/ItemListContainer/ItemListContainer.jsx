@@ -4,6 +4,8 @@ import styles from './styles.module.css'
 import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../../firebase/client'
 import Item from '../../components/Item/Item'
+import { mostrarAlertaError } from '../../components/Alerts/Alerts'
+
 export default function ItemListContainer() {
 
 
@@ -14,7 +16,7 @@ export default function ItemListContainer() {
     useEffect(() => {
 
         const filtrarProductos = (productos) => {
-            const productosFiltrados = productos.filter(producto => producto.categoria == id)
+            const productosFiltrados = productos.filter(producto => producto.categoria === id)
             productosFiltrados.length > 0 ? subirProductos(productosFiltrados) : subirProductos(productos)
 
         }
@@ -25,15 +27,13 @@ export default function ItemListContainer() {
 
         const conseguirProductos = async () => {
             try {
-
                 const productosRef = collection(db, "productos")
                 const data = await getDocs(productosRef)
                 const dataFiltrada = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-                console.log(dataFiltrada)
                 filtrarProductos(dataFiltrada)
                 setCargando(false)
             } catch (error) {
-                console.error('Error al cargar los productos', error)
+                mostrarAlertaError()
             }
         }
         conseguirProductos()
@@ -42,20 +42,20 @@ export default function ItemListContainer() {
     return (
         <div>
             {
-                cargando ? 
-                
-                (<div className="d-flex justify-content-center">
-                <div className="spinner-border" role="status">
-                  <span className="sr-only">Cargando...</span>
-                </div>
-              </div>) 
-                
-                :
+                cargando ?
+
+                    (<div className="d-flex justify-content-center">
+                        <div className="spinner-border" role="status">
+                            <span className="sr-only">Cargando...</span>
+                        </div>
+                    </div>)
+
+                    :
 
                     (<div className={styles['principal']}>
                         {items.map(item =>
-                            <div  key={item.id} >
-                                <Item id={item.id} rutaImagen={item.rutaImagen} nombre={item.nombre} artista={item.artista} precio={item.precio} stock={item.stock}/>
+                            <div key={item.id} >
+                                <Item id={item.id} rutaImagen={item.rutaImagen} nombre={item.nombre} artista={item.artista} precio={item.precio} stock={item.stock} />
                             </div>
                         )}
                     </div>)

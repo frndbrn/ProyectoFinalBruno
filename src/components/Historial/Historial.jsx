@@ -44,7 +44,7 @@ export default function Historial() {
                 value={idCompra}
                 onChange={handleIdCompraChange}
             />
-            <button onClick={buscarDocumento}>Buscar</button>
+            <button onClick={buscarDocumento} className={styles['boton']}>Buscar</button>
 
             {documento && (
                 <div>
@@ -53,19 +53,18 @@ export default function Historial() {
                     <p>Teléfono: {documento.buyer.telefono}</p>
                     <p>Correo Electrónico: {documento.buyer.email}</p>
 
-                    <h3 className={styles['informacion']}>Ítems Comprados</h3>
+                    <h3 className={styles['informacion']}>Productos comprados</h3>
                     <ul className={styles['lista']}>
                         {documento.items.map((item, index) => (
                             <li key={index} className={styles['item']}>
-                                <p>Nombre del ítem: {item.nombre}</p>
+                                <p>Nombre del disco: {item.nombre}</p>
                                 <p>Unidades: {item.unidades}</p>
-                                <p>Subtotal: {item.subtotal}</p>
+                                <p>Subtotal: ${item.subtotal}</p>
                             </li>
                         ))}
                     </ul>
 
-                    <h3 className={styles['total']}>Total de la Compra</h3>
-                    <p className={styles['precio']}>Total: ${documento.total}</p>
+                    <h3 className={styles['total']}>Total de la Compra: ${documento.total}</h3>
                 </div>
             )}
         </div>

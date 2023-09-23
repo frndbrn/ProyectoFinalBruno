@@ -12,20 +12,20 @@ import CheckoutPage from '../components/Checkout/Checkout'
 import Historial from '../components/Historial/Historial'
 
 
-export default function Router () {
+export default function Router() {
     return (
         <BrowserRouter>
-        <CartProvider>
-            <Navbar />
-        <Routes>
-            <Route path='/' element={<ItemListContainer />}></Route>
-            <Route path='/categoria/:id' element={<ItemListContainer />}></Route>
-            <Route path='/item/:id' element={<ItemDetailContainer />}></Route>
-            <Route path='/cart' element={<CartView/>}></Route>
-            <Route path='/checkout' element={<CheckoutPage/>}></Route>
-            <Route path='/historial' element={<Historial/>}></Route>
-        </Routes>
-        </CartProvider>
+            <CartProvider>
+                <Navbar />
+                <Routes>
+                    <Route path='/' element={<ItemListContainer />}></Route>
+                    <Route path='/categoria/:id' element={<ItemListContainer />}></Route>
+                    <Route path='/item/:id' element={<ItemDetailContainer />}></Route>
+                    <Route path='/cart' element={<CartView />}></Route>
+                    <Route path='/checkout' element={<CheckoutPage />}></Route>
+                    <Route path='/historial' element={<Historial />}></Route>
+                </Routes>
+            </CartProvider>
         </BrowserRouter>
     )
 

@@ -16,7 +16,6 @@ export function CartProvider({ children }) {
   }, [cartItems])
 
   const agregarACarrito = (producto) => {
-    console.log(producto.id)
     const productoExistente = cartItems.find((item) => item.id === producto.id)
     if (productoExistente) {
       if (productoExistente.unidades < producto.stock) {
@@ -47,9 +46,6 @@ export function CartProvider({ children }) {
   }
 
   const actualizarUnidades = (producto) => {
-    console.log(producto.unidades)
-    console.log(producto.nuevo)
-
     if (producto.nuevo <= producto.stock) {
       setCartItems((itemAgregado) =>
         itemAgregado.map((item) =>
@@ -61,7 +57,6 @@ export function CartProvider({ children }) {
     } else {
       mostrarToastInfo('No se puede agregar más unidades!')
     }
-    console.log()
   }
 
   return (
@@ -76,6 +71,5 @@ export function useCart() {
 }
 
 export const totalCarrito = (carrito) => {
-  console.log(carrito)
   return carrito.reduce((total, item) => total + item.unidades, 0)
 }

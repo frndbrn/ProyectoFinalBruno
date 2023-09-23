@@ -1,15 +1,15 @@
-import CartWidget from "../CartWidget/CartWidget";
-import styles from "./styles.module.css";
-import { Link, useLocation } from "react-router-dom";
+import CartWidget from "../CartWidget/CartWidget"
+import styles from "./styles.module.css"
+import { Link, useLocation } from "react-router-dom"
 
 export default function Navbar() {
-    const location = useLocation();
+    const location = useLocation()
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-secondary fixed-top">
-            <div className="container-fluid"> 
+            <div className="container-fluid">
                 <Link to="/" className="navbar-brand">
-                <img className={styles['logo']} src="/imgLogo/coder.png" alt="Logo" />
+                    <img className={styles['logo']} src="/imgLogo/coder.png" alt="Logo" />
                 </Link>
                 <button
                     className="navbar-toggler"
@@ -34,5 +34,5 @@ export default function Navbar() {
                 <CartWidget />
             </div>
         </nav>
-    );
+    )
 }

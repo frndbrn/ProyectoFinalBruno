@@ -7,7 +7,7 @@ import styles from './styles.module.css'
 import { mostrarAlertaExitosa } from '../Alerts/Alerts'
 
 
-export default function CheckoutPage({ }) {
+export default function CheckoutPage() {
     const { cartItems, montoFinal, eliminarDelCarrito } = useCart()
     const [nombre, setNombre] = useState('')
     const [telefono, setTelefono] = useState('')
@@ -33,7 +33,6 @@ export default function CheckoutPage({ }) {
         const orderCollection = collection(db, 'orders')
 
         addDoc(orderCollection, datosCompra).then(({ id }) => {
-            console.log(id)
             Promise.all(cartItems.map((item) => eliminarDelCarrito(item.id)))
                 .then(() => {
                     mostrarAlertaExitosa(id)

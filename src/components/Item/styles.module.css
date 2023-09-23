@@ -1,4 +1,4 @@
-.container{
+.container {
     border: 1px solid #ccc;
     border-radius: 8px;
     display: flex;
@@ -24,7 +24,7 @@
     margin-bottom: 16px;
 }
 
-.boton{
+.boton {
     background-color: #007bff;
     color: white;
     border: none;
@@ -36,6 +36,6 @@
     text-decoration: none;
 }
 
-.boton:hover{
+.boton:hover {
     background-color: #0056b3;
 }

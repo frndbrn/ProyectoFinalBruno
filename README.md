@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Coder Records (Versión 1.0)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bienvenido a Coder Records, mi nombre es Fernando Bruno, creador de la página, estudiante en la Comisión 55735 de Coderhouse.
+Ésta página fue creada en Visual Studio Code, utilizando React, React-Router, Firebase, Toastify y SweetAlert2.
 
-## Available Scripts
+ 
+## Requisitos:
+	- [Visual Code Studio](https://code.visualstudio.com/)
+	- [Node.js](https://nodejs.org/es)
+	- [Git](https://git-scm.com/)
+	- Cuenta de usuario en [Github](https://github.com/)
+	- Conexión a Internet para contactarse con Firebase
+	
 
-In the project directory, you can run:
+## Instalación y Ejecución
 
-### `npm start`
+Para ejecutar la aplicación localmente, sigue estos pasos:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clona este repositorio en tu máquina local utilizando Git Bash:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+	https://github.com/frndbrn/ProyectoFinalBruno.git
 
-### `npm test`
+2. Abrir la carpeta en Visual Code.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Abrir una terminal y escribir el comando "npm start" (siempre y cuando en la terminal estemos bien ubicados con la dirección de los archivos)
 
-### `npm run build`
+## Instalación de dependencias
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. React:
+	npm install react
+[Documentación de React](https://es.react.dev/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. React Router:
+	npm install react-router-dom
+[Documentación de React Router](https://reactrouter.com/en/main)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Firebase:
+	npm install firebase
+[Documentación de Firebase](https://firebase.google.com/?hl=es)
 
-### `npm run eject`
+4. Toastify:
+	npm install react-toastify
+[Documentación de Toastify](https://github.com/fkhadra/react-toastify)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+5. SweetAlert2:
+	npm install sweetalert2
+[Documentación de SweetAlert2](https://github.com/sweetalert2/sweetalert2-react-content)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Aclaración: por favor revisar la documentación de cada desarrollador para consultar los pasos a seguir.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Funcionalidades:
 
-## Learn More
+	- Se pueden filtrar los discos por categoría.
+	- Cada producto tiene más detalles adentro y se puede agregar el producto al carrito tanto desde la página principal como adentro en los detalles de cada producto.
+	- Se puede revisar el carrito antes de confirmar la compra, editar la cantidad de unidades e incluso eliminar un producto.
+	- Una vez llenado el formulario de compra, se creará un ID único, en el cual se puede ingresar en "Ver Historial" para saber tus compras previas.
+	- Siempre que agregues, modifiques o elimines un producto, recibirás notificaciones al respecto.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contacto:
 
-### Code Splitting
+Para más información te podes contactar a través del [perfil de github](https://github.com/frndbrn) 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Gracias por visitar mi página y leer esto, saludos!
